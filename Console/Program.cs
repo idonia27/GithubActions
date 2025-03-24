@@ -84,8 +84,23 @@ namespace GithubActionsLab
         // Implement this method following a similar pattern as above
         public static double Power(string x, string y)
         {
-            throw new NotImplementedException();
-        }
+           double baseNum = double.Parse(x);
+            int exponent = int.Parse(y);
+            double result = 1;
+        
+            if (exponent < 0) 
+            {
+                baseNum = 1 / baseNum; 
+                exponent = -exponent;
+            }
+        
+            for (int i = 0; i < exponent; i++)
+            {
+                result *= baseNum;
+            }
+        
+            return result;
+                }
     }
 
 
