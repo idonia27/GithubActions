@@ -84,7 +84,22 @@ namespace GithubActionsLab
         // Implement this method following a similar pattern as above
         public static double Power(string x, string y)
         {
-            throw new NotImplementedException();
+            double baseNum = double.Parse(x);
+    int exponent = int.Parse(y); // Assuming exponent is an integer
+
+    if (exponent == 0)
+        return 1;
+
+    double result = 1;
+    bool isNegative = exponent < 0;
+    exponent = Math.Abs(exponent);
+
+    for (int i = 0; i < exponent; i++)
+    {
+        result *= baseNum;
+    }
+
+    return isNegative ? 1 / result : result;
         }
     }
 
